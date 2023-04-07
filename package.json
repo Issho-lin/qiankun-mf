@@ -1,0 +1,40 @@
+{
+  "name": "gemdale-mf",
+  "version": "1.0.0",
+  "description": "微前端项目",
+  "main": "index.js",
+  "repository": "http://10.245.1.10:18080/web/gemdale-mf.git",
+  "author": "GEMDALE\\linqibin <linqibin@gemdale.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint --edit"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/cz-commitlint": "^17.1.2",
+    "commitizen": "^4.2.5",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-customizable": "^7.0.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "yorkie": "^2.0.0"
+  }
+}
